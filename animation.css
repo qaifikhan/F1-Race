@@ -1,0 +1,72 @@
+#first {
+	width: 150px;
+	height: 150px;
+
+    border-radius: 0%;
+	
+	/* animation: shapeChange 2s 2; */
+    animation-name: shapeChange;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+#first:hover {
+    animation-play-state: paused;
+}
+
+@keyframes shapeChange {
+	0% {
+		border-radius: 0%;
+	}
+
+	100% {
+		border-radius: 50%;
+	}
+}
+
+/* 
+    sq -> ci (0% -> 100%) 
+    sq -> ci (0% -> 100%)
+    sq -> ci (0% -> 100%)
+*/
+
+/* 
+    sq -> ci (0% -> 100%) 
+    ci -> sq (100% -> 0%)
+    sq -> ci (0% -> 100%)
+*/
+
+.car {
+    width: 250px;
+}
+
+#merc1 {
+    animation-name: accelerate;
+    animation-delay: 2s;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+#merc2 {
+    animation-name: accelerate;
+    animation-delay: 2s;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes accelerate {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(100vw - 280px));
+    }
+}
